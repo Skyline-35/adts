@@ -26,6 +26,23 @@ int List::size()
  {
     return num_elements;
  }
+int List::get(int k)
+ {
+	 Node* myPtr = frontPtr;
+	 if (k==1)
+	 {
+		 
+		 return frontPtr->data;
+	 }
+	 else
+	 {
+		 for(int loc = 1; loc != k; loc++)
+		 {
+			 myPtr = myPtr->link;
+		}
+	return myPtr->data;
+	}
+}
 
 void List::insert(int val, int k)
 {
@@ -90,6 +107,7 @@ void List::remove(int k)
 	delete delPtr;
 	num_elements--;
 	}
+
 	
 	//Implementations of missing operations
 	
